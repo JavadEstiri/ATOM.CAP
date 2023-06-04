@@ -1,0 +1,1 @@
+BACKUP DATABASE [ATOM] TO DISK = 'D:\web projects\ATOM\ATOM.API\ATOM.Infrastructure.DAL\DatabaseScript\BackUp\ATOM_{Date}.bak'

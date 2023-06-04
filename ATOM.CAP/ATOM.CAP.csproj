@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <!--<Nullable>enable</Nullable>-->
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.15" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.30.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ATOM.CAP.Core\ATOM.CAP.Core.csproj" />
+    <ProjectReference Include="..\ATOM.CAP.DAL\ATOM.CAP.DAL.csproj" />
+    <ProjectReference Include="..\ATOM.CAP.DataSource\ATOM.CAP.DataSource.csproj" />
+    <ProjectReference Include="..\ATOM.CAP.Domain\ATOM.CAP.Domain.csproj" />
+    <ProjectReference Include="..\ATOM.CAP.Model\ATOM.CAP.Model.csproj" />
+    <ProjectReference Include="..\ATOM.CAP.Service\ATOM.CAP.Service.csproj" />
+  </ItemGroup>
+
+</Project>

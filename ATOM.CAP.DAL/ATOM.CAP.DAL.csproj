@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!--<Nullable>enable</Nullable>-->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="DatabaseScript\BackUp\" />
+    <Folder Include="DatabaseScript\StoredProcedures\Management\Skill\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ATOM.CAP.Core\ATOM.CAP.Core.csproj" />
+    <ProjectReference Include="..\ATOM.CAP.DataSource\ATOM.CAP.DataSource.csproj" />
+    <ProjectReference Include="..\ATOM.CAP.Model\ATOM.CAP.Model.csproj" />
+  </ItemGroup>
+
+</Project>

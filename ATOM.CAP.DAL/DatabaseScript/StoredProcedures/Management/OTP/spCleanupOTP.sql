@@ -1,0 +1,32 @@
+use ATOM;
+GO
+
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'dbo.spCleanupOTP') AND type in (N'P', N'PC'))
+DROP PROCEDURE dbo.spCleanupOTP
+GO
+
+CREATE PROCEDURE dbo.spCleanupOTP
+WITH ENCRYPTION
+AS
+BEGIN
+
+	SET NOCOUNT ON;
+
+	BEGIN TRY
+		BEGIN TRAN
+			UPDATE [pbl].[OTP] SET 
+				   [Expired] = 1 
+			WHERE DATEDIFF(MINUTE,CreationDate,GETDATE()) > [ValidityPeriodInMinutes]
+		COMMIT
+
+	END TRY
+	BEGIN CATCH 
+		ROLLBACK
+		DECLARE @Error VARCHAR(MAX) = ERROR_MESSAGE()
+		RAISERROR(@Error, 16, 1)
+	END CATCH
+
+END
+GO
